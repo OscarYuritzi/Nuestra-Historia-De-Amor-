@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oscar & Yuritzi - Iniciar Sesión</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .card {
+            background-image: linear-gradient(163deg, #ff7eb3 0%, #ff758c 100%);
+            border-radius: 22px;
+            transition: all 0.3s;
+            padding: 2px;
+            width: 90%;
+            max-width: 400px;
+            margin: 1rem;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 2em;
+            background-color: #ffe4e6;
+            border-radius: 20px;
+            transition: 0.4s ease-in-out;
+            box-shadow: 0px 8px 15px rgba(255, 182, 193, 0.4);
+        }
+
+        #heading {
+            text-align: center;
+            margin: 2em;
+            color: #ff597b;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .field {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5em;
+            border-radius: 25px;
+            padding: 0.6em;
+            border: none;
+            outline: none;
+            color: #ff597b;
+            background-color: #fff0f3;
+            box-shadow: inset 2px 5px 10px rgba(255, 105, 135, 0.2);
+        }
+
+        .input-field {
+            background: none;
+            border: none;
+            outline: none;
+            width: 100%;
+            color: #ff6f91;
+            font-size: 1rem;
+        }
+
+        .button1 {
+            padding: 0.8em 2em;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            transition: 0.4s ease-in-out;
+            background-color: #ff6f91;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .button1:hover {
+            background-color: #ff3d6e;
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                width: 95%;
+            }
+
+            .form {
+                padding: 1.5em;
+            }
+
+            #heading {
+                margin: 1em;
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <form class="form" id="loginForm">
+            <p id="heading">💖 Iniciar Sesión 💖</p>
+            <div class="field">
+                <input type="email" class="input-field" placeholder="Correo electrónico" id="email" required>
+            </div>
+            <div class="field">
+                <input type="password" class="input-field" placeholder="Contraseña" id="password" required>
+            </div>
+            <button type="submit" class="button1">Entrar</button>
+        </form>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js';
+        import { getAuth, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js';
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCyBRfQDFXjusN_aalebWPPIgsm5QWr9fg",
+            authDomain: "oscar-afc2f.firebaseapp.com",
+            projectId: "oscar-afc2f",
+            storageBucket: "oscar-afc2f.firebasestorage.app",
+            messagingSenderId: "205663051008",
+            appId: "1:205663051008:web:b7cfb775523d92895467e5"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                const userCredential = await signInWithEmailAndPassword(auth, email, password);
+                if (userCredential.user) {
+                    window.location.href = '/home.html';
+                }
+            } catch (error) {
+                alert('Credenciales inválidas');
+            }
+        });
+    </script>
+</body>
+</html>

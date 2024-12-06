@@ -1,0 +1,134 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffccd5 0%, #ffd1dc 100%);
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    text-decoration: none;
+    color: #ff597b;
+    font-weight: bold;
+}
+
+.navbar h1 {
+    margin: 0;
+    color: #ff597b;
+}
+
+.diary-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.diary {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.diary-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.diary-header h2 {
+    color: #ff597b;
+    margin: 0 0 0.5rem 0;
+}
+
+#diary-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#diary-title {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#diary-content {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    min-height: 150px;
+    font-size: 1rem;
+    resize: vertical;
+}
+
+button {
+    background: #ff597b;
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #ff3d6e;
+}
+
+.entries {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.entries h3 {
+    color: #ff597b;
+    margin: 0 0 1rem 0;
+    text-align: center;
+}
+
+.entry {
+    border-bottom: 1px solid #eee;
+    padding: 1rem 0;
+}
+
+.entry:last-child {
+    border-bottom: none;
+}
+
+.entry-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.entry-title {
+    color: #ff597b;
+    font-weight: bold;
+}
+
+.entry-author {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.entry-content {
+    color: #333;
+    line-height: 1.6;
+}
