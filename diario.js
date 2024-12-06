@@ -24,7 +24,7 @@ onAuthStateChanged(auth, (user) => {
         document.getElementById('current-user').textContent = `Escribiendo como: ${userName}`;
         loadEntries();
     } else {
-        window.location.href = '/index.html';
+        window.location.href = 'index.html';
     }
 });
 
