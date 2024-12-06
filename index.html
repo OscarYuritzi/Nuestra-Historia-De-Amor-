@@ -138,7 +138,7 @@
             try {
                 const userCredential = await signInWithEmailAndPassword(auth, email, password);
                 if (userCredential.user) {
-                    window.location.href = '/home.html';
+                    window.location.href = 'home.html';
                 }
             } catch (error) {
                 alert('Credenciales inválidas');
