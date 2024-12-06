@@ -15,6 +15,6 @@ const auth = getAuth(app);
 
 onAuthStateChanged(auth, (user) => {
     if (!user) {
-        window.location.href = '/index.html';
+        window.location.href = 'index.html';
     }
 });
